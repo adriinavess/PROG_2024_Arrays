@@ -25,6 +25,18 @@ public class Start {
 		a4.setEdad(20);
 		System.out.println(a4);
 		
+		Alumno a5 = new Alumno();
+		a5.setNombre("Manoli");
+		a5.setEdad(20);
+		System.out.println(a5);
+		
+		Aula aula = new Aula(4);
+		aula.add(a1);
+		aula.add(a2);
+		aula.add(a3);
+		aula.add(a4);
+		aula.add(a5);
+		
 	}
 
 }
