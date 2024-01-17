@@ -11,19 +11,19 @@ public class Start {
 		System.out.println(a1);
 		
 		Alumno a2 = new Alumno();
-		a1.setNombre("Laura");
-		a1.setEdad(20);
-		System.out.println(a1);
+		a2.setNombre("Laura");
+		a2.setEdad(20);
+		System.out.println(a2);
 		
 		Alumno a3 = new Alumno();
-		a1.setNombre("Victor");
-		a1.setEdad(20);
-		System.out.println(a1);
+		a3.setNombre("Victor");
+		a3.setEdad(20);
+		System.out.println(a3);
 		
 		Alumno a4 = new Alumno();
-		a1.setNombre("Pepe");
-		a1.setEdad(20);
-		System.out.println(a1);
+		a4.setNombre("Pepe");
+		a4.setEdad(20);
+		System.out.println(a4);
 		
 	}
 
