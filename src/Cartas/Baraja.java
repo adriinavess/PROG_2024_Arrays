@@ -51,5 +51,73 @@ public class Baraja {
 		return "Baraja [" + Arrays.toString(cartas) + "]";
 	}
 	
+	public void voltearCarta(char valor, char palo) {
+		
+		//Buscar Carta --valor, palo--
+		Carta carta = buscarCarta(valor,palo);
+		int posicion = buscarIndiceCarta(valor,palo);
+
+		//dar vuelta carta
+		carta.setBocaArriba(false);
+		cartas[posicion].setBocaArriba(false);
+	}
+	
+	private Carta buscarCarta(char valor, char palo) {
+		
+		Carta devolver = null;
+		int i = 0;
+		boolean encontrado = false;
+		
+		while((i<cartas.length)&&(!encontrado)) {
+			
+			if(cartas[i].getValor()==valor 
+			   && cartas[i].getPalo()==palo) {
+				
+				encontrado = true;
+				devolver = cartas[i];
+			}
+			i++;
+		}
+		return devolver;
+	}
+	
+	private int buscarIndiceCarta(char valor, char palo) {
+		
+		int devolver = -1;
+		int i = 0;
+		boolean encontrado = false;
+		
+		while((i<cartas.length)&&(!encontrado)) {
+			
+			if(cartas[i].getValor()==valor 
+			   && cartas[i].getPalo()==palo) {
+				
+				encontrado = true;
+				devolver = i;
+			}
+			i++;
+		}
+		return devolver;
+	}
+	
+	private void intercambiar(int pos1, int pos2) {
+		Carta temporal = cartas[pos1];
+		cartas[pos1] = cartas[pos2];
+		cartas[pos2] = temporal;
+	}
+	
+	public void barajar() {
+		int i=0;
+		while(i<10) {
+			int pos1 = (int)(Math.random()*52);
+			int pos2 = (int)(Math.random()*52);
+			
+			if(pos1 != pos2) {
+				intercambiar(pos1, pos2);
+				i++;
+			}
+		}
+	}
+
 
 }

@@ -4,7 +4,14 @@ public class Carta {
 	
 	private char valor;
 	private char palo;
+	private boolean bocaArriba = true;
 	
+	public boolean isBocaArriba() {
+		return bocaArriba;
+	}
+	public void setBocaArriba(boolean bocaArriba) {
+		this.bocaArriba = bocaArriba;
+	}
 	
 	public char getValor() {
 		return valor;
@@ -20,7 +27,14 @@ public class Carta {
 	}
 	
 	public String toString() {
-		return "[" + valor + "" + palo + "]";
+		
+		String devolver =  "[" + valor + "" + palo;
+		if(bocaArriba) {
+			devolver += "]";
+		}
+		else devolver += "*]";
+		
+		return devolver;
 	}
 
 }
